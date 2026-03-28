@@ -1,0 +1,2354 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix ex: <http://musickg.example.org/resource/> .
+@prefix exo: <http://musickg.example.org/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+exo:activeFrom a owl:DatatypeProperty ;
+    rdfs:label "activeFrom"@en ;
+    exo:alignmentConfidence 0.85 ;
+    rdfs:comment "P571 pour groupes, P569 pour individus"@fr ;
+    owl:equivalentProperty wdt:P571 .
+
+exo:activeTo a owl:DatatypeProperty ;
+    rdfs:label "activeTo"@en ;
+    exo:alignmentConfidence 0.85 ;
+    rdfs:comment "P576 pour groupes, P570 pour individus"@fr ;
+    owl:equivalentProperty wdt:P576 .
+
+exo:collaboratedWith a owl:ObjectProperty ;
+    rdfs:label "collaboratedWith"@en ;
+    exo:alignmentConfidence 0.7 ;
+    rdfs:comment "P1327 trop generique, le notre est musical"@fr ;
+    rdfs:domain exo:Artist ;
+    rdfs:range exo:Artist ;
+    rdfs:subPropertyOf wdt:P1327 .
+
+exo:hasGenre a owl:ObjectProperty ;
+    rdfs:label "hasGenre"@en ;
+    exo:alignmentConfidence 0.99 ;
+    rdfs:comment "match exact"@fr ;
+    rdfs:domain exo:Artist ;
+    rdfs:range exo:MusicGenre ;
+    owl:equivalentProperty dbo:genre,
+        wdt:P136 .
+
+exo:hasMember a owl:ObjectProperty ;
+    rdfs:label "hasMember"@en ;
+    exo:alignmentConfidence 0.88 ;
+    rdfs:comment "hasMember est plus specifique que hasPart"@fr ;
+    rdfs:domain exo:MusicGroup ;
+    rdfs:range exo:SoloArtist ;
+    rdfs:subPropertyOf wdt:P527 ;
+    owl:equivalentProperty dbo:bandMember .
+
+exo:influencedBy a owl:ObjectProperty ;
+    rdfs:label "influencedBy"@en ;
+    exo:alignmentConfidence 0.99 ;
+    rdfs:comment "match exact"@fr ;
+    rdfs:domain exo:Artist ;
+    rdfs:range exo:Artist ;
+    owl:equivalentProperty dbo:influencedBy,
+        wdt:P737 .
+
+exo:memberOf a owl:ObjectProperty ;
+    rdfs:label "memberOf"@en ;
+    exo:alignmentConfidence 0.97 ;
+    rdfs:comment "match exact"@fr ;
+    rdfs:domain exo:SoloArtist ;
+    rdfs:range exo:MusicGroup ;
+    owl:equivalentProperty dbo:bandMember,
+        wdt:P463 .
+
+exo:originCountry a owl:ObjectProperty ;
+    rdfs:label "originCountry"@en ;
+    exo:alignmentConfidence 0.9 ;
+    rdfs:comment "P495 pour groupes, P27 pour individus"@fr ;
+    rdfs:domain exo:Artist ;
+    rdfs:range exo:Country ;
+    owl:equivalentProperty dbo:birthPlace,
+        wdt:P495 .
+
+exo:releaseYear a owl:DatatypeProperty ;
+    rdfs:label "releaseYear"@en ;
+    exo:alignmentConfidence 0.96 ;
+    rdfs:comment "match exact"@fr ;
+    owl:equivalentProperty wdt:P577 .
+
+exo:releasedAlbum a owl:ObjectProperty ;
+    rdfs:label "releasedAlbum"@en ;
+    exo:alignmentConfidence 0.85 ;
+    rdfs:comment "P358 plus large mais le plus proche"@fr ;
+    rdfs:domain exo:Artist ;
+    rdfs:range exo:Album ;
+    owl:equivalentProperty dbo:album,
+        wdt:P358 .
+
+exo:signedTo a owl:ObjectProperty ;
+    rdfs:label "signedTo"@en ;
+    exo:alignmentConfidence 0.98 ;
+    rdfs:comment "match exact"@fr ;
+    rdfs:domain exo:Artist ;
+    rdfs:range exo:RecordLabel ;
+    owl:equivalentProperty dbo:recordLabel,
+        wdt:P264 .
+
+exo:wikidataID a owl:DatatypeProperty ;
+    rdfs:label "wikidataID"@en .
+
+ex:Adele a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Adele"@en ;
+    exo:activeFrom "2006"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "context" ;
+    exo:hasGenre ex:Genre_R%26B,
+        ex:Genre_pop,
+        ex:Genre_soul ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_19,
+        ex:Album_21,
+        ex:Album_30 ;
+    exo:signedTo ex:Label_XL_Recordings ;
+    exo:wikidataID "Q81771" ;
+    owl:sameAs wd:Q81771 ;
+    foaf:name "Adele" .
+
+ex:Adrian_Utley a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Adrian Utley"@en ;
+    exo:memberOf ex:Portishead .
+
+ex:Albert_Hammond_Jr a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Albert Hammond Jr"@en ;
+    exo:memberOf ex:The_Strokes .
+
+ex:Album_19 a exo:Album ;
+    rdfs:label "19"@en ;
+    exo:releaseYear "2008"^^xsd:gYear .
+
+ex:Album_21 a exo:Album ;
+    rdfs:label "21"@en ;
+    exo:releaseYear "2011"^^xsd:gYear .
+
+ex:Album_2Pacalypse_Now a exo:Album ;
+    rdfs:label "2Pacalypse Now"@en ;
+    exo:releaseYear "1991"^^xsd:gYear .
+
+ex:Album_30 a exo:Album ;
+    rdfs:label "30"@en ;
+    exo:releaseYear "2021"^^xsd:gYear .
+
+ex:Album_AM a exo:Album ;
+    rdfs:label "AM"@en ;
+    exo:releaseYear "2013"^^xsd:gYear .
+
+ex:Album_A_New_Day_Has_Come a exo:Album ;
+    rdfs:label "A New Day Has Come"@en ;
+    exo:releaseYear "2002"^^xsd:gYear .
+
+ex:Album_A_Night_at_the_Opera a exo:Album ;
+    rdfs:label "A Night at the Opera"@en ;
+    exo:releaseYear "1975"^^xsd:gYear .
+
+ex:Album_A_Rush_of_Blood_to_the_Head a exo:Album ;
+    rdfs:label "A Rush of Blood to the Head"@en ;
+    exo:releaseYear "2002"^^xsd:gYear .
+
+ex:Album_Abbey_Road a exo:Album ;
+    rdfs:label "Abbey Road"@en ;
+    exo:releaseYear "1969"^^xsd:gYear .
+
+ex:Album_Ainsi_soit_je a exo:Album ;
+    rdfs:label "Ainsi soit je"@en ;
+    exo:releaseYear "1988"^^xsd:gYear .
+
+ex:Album_All_Eyez_on_Me a exo:Album ;
+    rdfs:label "All Eyez on Me"@en ;
+    exo:releaseYear "1996"^^xsd:gYear .
+
+ex:Album_Amazing_Grace a exo:Album ;
+    rdfs:label "Amazing Grace"@en ;
+    exo:releaseYear "1972"^^xsd:gYear .
+
+ex:Album_American_Dream a exo:Album ;
+    rdfs:label "American Dream"@en ;
+    exo:releaseYear "2017"^^xsd:gYear .
+
+ex:Album_Amsterdam a exo:Album ;
+    rdfs:label "Amsterdam"@en ;
+    exo:releaseYear "1964"^^xsd:gYear .
+
+ex:Album_Anamorphosee a exo:Album ;
+    rdfs:label "Anamorphosee"@en ;
+    exo:releaseYear "1995"^^xsd:gYear .
+
+ex:Album_Anti a exo:Album ;
+    rdfs:label "Anti"@en ;
+    exo:releaseYear "2016"^^xsd:gYear .
+
+ex:Album_Aux_armes_et_caetera a exo:Album ;
+    rdfs:label "Aux armes et caetera"@en ;
+    exo:releaseYear "1979"^^xsd:gYear .
+
+ex:Album_Back_to_Black a exo:Album ;
+    rdfs:label "Back to Black"@en ;
+    exo:releaseYear "2006"^^xsd:gYear .
+
+ex:Album_Bad a exo:Album ;
+    rdfs:label "Bad"@en ;
+    exo:releaseYear "1987"^^xsd:gYear .
+
+ex:Album_Bitches_Brew a exo:Album ;
+    rdfs:label "Bitches Brew"@en ;
+    exo:releaseYear "1970"^^xsd:gYear .
+
+ex:Album_Bleach a exo:Album ;
+    rdfs:label "Bleach"@en ;
+    exo:releaseYear "1989"^^xsd:gYear .
+
+ex:Album_Blood_on_the_Tracks a exo:Album ;
+    rdfs:label "Blood on the Tracks"@en ;
+    exo:releaseYear "1975"^^xsd:gYear .
+
+ex:Album_Blue_Lines a exo:Album ;
+    rdfs:label "Blue Lines"@en ;
+    exo:releaseYear "1991"^^xsd:gYear .
+
+ex:Album_Catch_a_Fire a exo:Album ;
+    rdfs:label "Catch a Fire"@en ;
+    exo:releaseYear "1973"^^xsd:gYear .
+
+ex:Album_Cendres_de_lune a exo:Album ;
+    rdfs:label "Cendres de lune"@en ;
+    exo:releaseYear "1986"^^xsd:gYear .
+
+ex:Album_Ces_gens_la a exo:Album ;
+    rdfs:label "Ces gens-la"@en ;
+    exo:releaseYear "1966"^^xsd:gYear .
+
+ex:Album_Chapitre_7 a exo:Album ;
+    rdfs:label "Chapitre 7"@en ;
+    exo:releaseYear "2007"^^xsd:gYear .
+
+ex:Album_Cheese a exo:Album ;
+    rdfs:label "Cheese"@en ;
+    exo:releaseYear "2010"^^xsd:gYear .
+
+ex:Album_Closer a exo:Album ;
+    rdfs:label "Closer"@en ;
+    exo:releaseYear "1980"^^xsd:gYear .
+
+ex:Album_Come_Fly_with_Me a exo:Album ;
+    rdfs:label "Come Fly with Me"@en ;
+    exo:releaseYear "1958"^^xsd:gYear .
+
+ex:Album_Currents a exo:Album ;
+    rdfs:label "Currents"@en ;
+    exo:releaseYear "2015"^^xsd:gYear .
+
+ex:Album_DAMN a exo:Album ;
+    rdfs:label "DAMN"@en ;
+    exo:releaseYear "2017"^^xsd:gYear .
+
+ex:Album_Dangerous a exo:Album ;
+    rdfs:label "Dangerous"@en ;
+    exo:releaseYear "1991"^^xsd:gYear .
+
+ex:Album_Dangerously_in_Love a exo:Album ;
+    rdfs:label "Dangerously in Love"@en ;
+    exo:releaseYear "2003"^^xsd:gYear .
+
+ex:Album_Debut a exo:Album ;
+    rdfs:label "Debut"@en ;
+    exo:releaseYear "1993"^^xsd:gYear .
+
+ex:Album_Demon_Days a exo:Album ;
+    rdfs:label "Demon Days"@en ;
+    exo:releaseYear "2005"^^xsd:gYear .
+
+ex:Album_Discovery a exo:Album ;
+    rdfs:label "Discovery"@en ;
+    exo:releaseYear "2001"^^xsd:gYear .
+
+ex:Album_Drukqs a exo:Album ;
+    rdfs:label "Drukqs"@en ;
+    exo:releaseYear "2001"^^xsd:gYear .
+
+ex:Album_Dummy a exo:Album ;
+    rdfs:label "Dummy"@en ;
+    exo:releaseYear "1994"^^xsd:gYear .
+
+ex:Album_Elvis_Is_Back a exo:Album ;
+    rdfs:label "Elvis Is Back"@en ;
+    exo:releaseYear "1960"^^xsd:gYear .
+
+ex:Album_Elvis_Presley a exo:Album ;
+    rdfs:label "Elvis Presley"@en ;
+    exo:releaseYear "1956"^^xsd:gYear .
+
+ex:Album_Exile_on_Main_St a exo:Album ;
+    rdfs:label "Exile on Main St"@en ;
+    exo:releaseYear "1972"^^xsd:gYear .
+
+ex:Album_Exodus a exo:Album ;
+    rdfs:label "Exodus"@en ;
+    exo:releaseYear "1977"^^xsd:gYear .
+
+ex:Album_Falling_into_You a exo:Album ;
+    rdfs:label "Falling into You"@en ;
+    exo:releaseYear "1996"^^xsd:gYear .
+
+ex:Album_First_Impressions_of_Earth a exo:Album ;
+    rdfs:label "First Impressions of Earth"@en ;
+    exo:releaseYear "2006"^^xsd:gYear .
+
+ex:Album_Frank a exo:Album ;
+    rdfs:label "Frank"@en ;
+    exo:releaseYear "2003"^^xsd:gYear .
+
+ex:Album_From_Elvis_in_Memphis a exo:Album ;
+    rdfs:label "From Elvis in Memphis"@en ;
+    exo:releaseYear "1969"^^xsd:gYear .
+
+ex:Album_Good_Girl_Gone_Bad a exo:Album ;
+    rdfs:label "Good Girl Gone Bad"@en ;
+    exo:releaseYear "2007"^^xsd:gYear .
+
+ex:Album_Gorillaz a exo:Album ;
+    rdfs:label "Gorillaz"@en ;
+    exo:releaseYear "2001"^^xsd:gYear .
+
+ex:Album_Heligoland a exo:Album ;
+    rdfs:label "Heligoland"@en ;
+    exo:releaseYear "2010"^^xsd:gYear .
+
+ex:Album_Heroes a exo:Album ;
+    rdfs:label "Heroes"@en ;
+    exo:releaseYear "1977"^^xsd:gYear .
+
+ex:Album_Highway_61_Revisited a exo:Album ;
+    rdfs:label "Highway 61 Revisited"@en ;
+    exo:releaseYear "1965"^^xsd:gYear .
+
+ex:Album_Histoire_de_Melody_Nelson a exo:Album ;
+    rdfs:label "Histoire de Melody Nelson"@en ;
+    exo:releaseYear "1971"^^xsd:gYear .
+
+ex:Album_Homework a exo:Album ;
+    rdfs:label "Homework"@en ;
+    exo:releaseYear "1997"^^xsd:gYear .
+
+ex:Album_Homogenic a exo:Album ;
+    rdfs:label "Homogenic"@en ;
+    exo:releaseYear "1997"^^xsd:gYear .
+
+ex:Album_Houses_of_the_Holy a exo:Album ;
+    rdfs:label "Houses of the Holy"@en ;
+    exo:releaseYear "1973"^^xsd:gYear .
+
+ex:Album_Hymne_a_lamour a exo:Album ;
+    rdfs:label "Hymne a lamour"@en ;
+    exo:releaseYear "1950"^^xsd:gYear .
+
+ex:Album_I_Look_to_You a exo:Album ;
+    rdfs:label "I Look to You"@en ;
+    exo:releaseYear "2009"^^xsd:gYear .
+
+ex:Album_I_Never_Loved_a_Man_the_Way_I_Love_You a exo:Album ;
+    rdfs:label "I Never Loved a Man the Way I Love You"@en ;
+    exo:releaseYear "1967"^^xsd:gYear .
+
+ex:Album_I_Put_a_Spell_on_You a exo:Album ;
+    rdfs:label "I Put a Spell on You"@en ;
+    exo:releaseYear "1965"^^xsd:gYear .
+
+ex:Album_In_Rainbows a exo:Album ;
+    rdfs:label "In Rainbows"@en ;
+    exo:releaseYear "2007"^^xsd:gYear .
+
+ex:Album_In_Utero a exo:Album ;
+    rdfs:label "In Utero"@en ;
+    exo:releaseYear "1993"^^xsd:gYear .
+
+ex:Album_In_the_Wee_Small_Hours a exo:Album ;
+    rdfs:label "In the Wee Small Hours"@en ;
+    exo:releaseYear "1955"^^xsd:gYear .
+
+ex:Album_Innerspeaker a exo:Album ;
+    rdfs:label "Innerspeaker"@en ;
+    exo:releaseYear "2010"^^xsd:gYear .
+
+ex:Album_Is_This_It a exo:Album ;
+    rdfs:label "Is This It"@en ;
+    exo:releaseYear "2001"^^xsd:gYear .
+
+ex:Album_Jazz a exo:Album ;
+    rdfs:label "Jazz"@en ;
+    exo:releaseYear "1978"^^xsd:gYear .
+
+ex:Album_Je_men_remets_a_toi a exo:Album ;
+    rdfs:label "Je men remets a toi"@en ;
+    exo:releaseYear "1963"^^xsd:gYear .
+
+ex:Album_Kid_A a exo:Album ;
+    rdfs:label "Kid A"@en ;
+    exo:releaseYear "2000"^^xsd:gYear .
+
+ex:Album_Kind_of_Blue a exo:Album ;
+    rdfs:label "Kind of Blue"@en ;
+    exo:releaseYear "1959"^^xsd:gYear .
+
+ex:Album_LCD_Soundsystem a exo:Album ;
+    rdfs:label "LCD Soundsystem"@en ;
+    exo:releaseYear "2005"^^xsd:gYear .
+
+ex:Album_L_Homme_a_tete_de_chou a exo:Album ;
+    rdfs:label "L Homme a tete de chou"@en ;
+    exo:releaseYear "1976"^^xsd:gYear .
+
+ex:Album_La_Boheme a exo:Album ;
+    rdfs:label "La Boheme"@en ;
+    exo:releaseYear "1965"^^xsd:gYear .
+
+ex:Album_La_Vie_en_Rose a exo:Album ;
+    rdfs:label "La Vie en Rose"@en ;
+    exo:releaseYear "1947"^^xsd:gYear .
+
+ex:Album_Lady_Soul a exo:Album ;
+    rdfs:label "Lady Soul"@en ;
+    exo:releaseYear "1968"^^xsd:gYear .
+
+ex:Album_Led_Zeppelin_IV a exo:Album ;
+    rdfs:label "Led Zeppelin IV"@en ;
+    exo:releaseYear "1971"^^xsd:gYear .
+
+ex:Album_Lemonade a exo:Album ;
+    rdfs:label "Lemonade"@en ;
+    exo:releaseYear "2016"^^xsd:gYear .
+
+ex:Album_Let_It_Be a exo:Album ;
+    rdfs:label "Let It Be"@en ;
+    exo:releaseYear "1970"^^xsd:gYear .
+
+ex:Album_Let_It_Bleed a exo:Album ;
+    rdfs:label "Let It Bleed"@en ;
+    exo:releaseYear "1969"^^xsd:gYear .
+
+ex:Album_Lets_Dance a exo:Album ;
+    rdfs:label "Lets Dance"@en ;
+    exo:releaseYear "1983"^^xsd:gYear .
+
+ex:Album_Lets_Talk_About_Love a exo:Album ;
+    rdfs:label "Lets Talk About Love"@en ;
+    exo:releaseYear "1997"^^xsd:gYear .
+
+ex:Album_Little_Girl_Blue a exo:Album ;
+    rdfs:label "Little Girl Blue"@en ;
+    exo:releaseYear "1958"^^xsd:gYear .
+
+ex:Album_Lonerism a exo:Album ;
+    rdfs:label "Lonerism"@en ;
+    exo:releaseYear "2012"^^xsd:gYear .
+
+ex:Album_Me_Against_the_World a exo:Album ;
+    rdfs:label "Me Against the World"@en ;
+    exo:releaseYear "1995"^^xsd:gYear .
+
+ex:Album_Mezzanine a exo:Album ;
+    rdfs:label "Mezzanine"@en ;
+    exo:releaseYear "1998"^^xsd:gYear .
+
+ex:Album_Moon_Safari a exo:Album ;
+    rdfs:label "Moon Safari"@en ;
+    exo:releaseYear "1998"^^xsd:gYear .
+
+ex:Album_Multitude a exo:Album ;
+    rdfs:label "Multitude"@en ;
+    exo:releaseYear "2022"^^xsd:gYear .
+
+ex:Album_My_Beautiful_Dark_Twisted_Fantasy a exo:Album ;
+    rdfs:label "My Beautiful Dark Twisted Fantasy"@en ;
+    exo:releaseYear "2010"^^xsd:gYear .
+
+ex:Album_My_Love_Is_Your_Love a exo:Album ;
+    rdfs:label "My Love Is Your Love"@en ;
+    exo:releaseYear "1998"^^xsd:gYear .
+
+ex:Album_Ne_me_quitte_pas a exo:Album ;
+    rdfs:label "Ne me quitte pas"@en ;
+    exo:releaseYear "1959"^^xsd:gYear .
+
+ex:Album_Nevermind a exo:Album ;
+    rdfs:label "Nevermind"@en ;
+    exo:releaseYear "1991"^^xsd:gYear .
+
+ex:Album_News_of_the_World a exo:Album ;
+    rdfs:label "News of the World"@en ;
+    exo:releaseYear "1977"^^xsd:gYear .
+
+ex:Album_Non_je_ne_regrette_rien a exo:Album ;
+    rdfs:label "Non je ne regrette rien"@en ;
+    exo:releaseYear "1960"^^xsd:gYear .
+
+ex:Album_Nothing_Was_the_Same a exo:Album ;
+    rdfs:label "Nothing Was the Same"@en ;
+    exo:releaseYear "2013"^^xsd:gYear .
+
+ex:Album_OK_Computer a exo:Album ;
+    rdfs:label "OK Computer"@en ;
+    exo:releaseYear "1997"^^xsd:gYear .
+
+ex:Album_Parachutes a exo:Album ;
+    rdfs:label "Parachutes"@en ;
+    exo:releaseYear "2000"^^xsd:gYear .
+
+ex:Album_Pastel_Blues a exo:Album ;
+    rdfs:label "Pastel Blues"@en ;
+    exo:releaseYear "1965"^^xsd:gYear .
+
+ex:Album_Physical_Graffiti a exo:Album ;
+    rdfs:label "Physical Graffiti"@en ;
+    exo:releaseYear "1975"^^xsd:gYear .
+
+ex:Album_Plastic_Beach a exo:Album ;
+    rdfs:label "Plastic Beach"@en ;
+    exo:releaseYear "2010"^^xsd:gYear .
+
+ex:Album_Portishead a exo:Album ;
+    rdfs:label "Portishead"@en ;
+    exo:releaseYear "1997"^^xsd:gYear .
+
+ex:Album_Post a exo:Album ;
+    rdfs:label "Post"@en ;
+    exo:releaseYear "1995"^^xsd:gYear .
+
+ex:Album_Prose_Combat a exo:Album ;
+    rdfs:label "Prose Combat"@en ;
+    exo:releaseYear "1994"^^xsd:gYear .
+
+ex:Album_Qui_seme_le_vent_recolte_le_tempo a exo:Album ;
+    rdfs:label "Qui seme le vent recolte le tempo"@en ;
+    exo:releaseYear "1991"^^xsd:gYear .
+
+ex:Album_Racine_Carree a exo:Album ;
+    rdfs:label "Racine Carree"@en ;
+    exo:releaseYear "2013"^^xsd:gYear .
+
+ex:Album_Random_Access_Memories a exo:Album ;
+    rdfs:label "Random Access Memories"@en ;
+    exo:releaseYear "2013"^^xsd:gYear .
+
+ex:Album_Rated_R a exo:Album ;
+    rdfs:label "Rated R"@en ;
+    exo:releaseYear "2009"^^xsd:gYear .
+
+ex:Album_Reasonable_Doubt a exo:Album ;
+    rdfs:label "Reasonable Doubt"@en ;
+    exo:releaseYear "1996"^^xsd:gYear .
+
+ex:Album_Renaissance a exo:Album ;
+    rdfs:label "Renaissance"@en ;
+    exo:releaseYear "2022"^^xsd:gYear .
+
+ex:Album_Revolver a exo:Album ;
+    rdfs:label "Revolver"@en ;
+    exo:releaseYear "1966"^^xsd:gYear .
+
+ex:Album_Richard_D_James_Album a exo:Album ;
+    rdfs:label "Richard D James Album"@en ;
+    exo:releaseYear "1996"^^xsd:gYear .
+
+ex:Album_Room_on_Fire a exo:Album ;
+    rdfs:label "Room on Fire"@en ;
+    exo:releaseYear "2003"^^xsd:gYear .
+
+ex:Album_Scorpion a exo:Album ;
+    rdfs:label "Scorpion"@en ;
+    exo:releaseYear "2018"^^xsd:gYear .
+
+ex:Album_Selected_Ambient_Works_85_92 a exo:Album ;
+    rdfs:label "Selected Ambient Works 85-92"@en ;
+    exo:releaseYear "1992"^^xsd:gYear .
+
+ex:Album_She a exo:Album ;
+    rdfs:label "She"@en ;
+    exo:releaseYear "1974"^^xsd:gYear .
+
+ex:Album_Sketches_of_Spain a exo:Album ;
+    rdfs:label "Sketches of Spain"@en ;
+    exo:releaseYear "1960"^^xsd:gYear .
+
+ex:Album_Songs_for_Swingin_Lovers a exo:Album ;
+    rdfs:label "Songs for Swingin Lovers"@en ;
+    exo:releaseYear "1956"^^xsd:gYear .
+
+ex:Album_Sound_of_Silver a exo:Album ;
+    rdfs:label "Sound of Silver"@en ;
+    exo:releaseYear "2007"^^xsd:gYear .
+
+ex:Album_Sticky_Fingers a exo:Album ;
+    rdfs:label "Sticky Fingers"@en ;
+    exo:releaseYear "1971"^^xsd:gYear .
+
+ex:Album_Take_Care a exo:Album ;
+    rdfs:label "Take Care"@en ;
+    exo:releaseYear "2011"^^xsd:gYear .
+
+ex:Album_Talkie_Walkie a exo:Album ;
+    rdfs:label "Talkie Walkie"@en ;
+    exo:releaseYear "2004"^^xsd:gYear .
+
+ex:Album_The_Black_Album a exo:Album ;
+    rdfs:label "The Black Album"@en ;
+    exo:releaseYear "2003"^^xsd:gYear .
+
+ex:Album_The_Blueprint a exo:Album ;
+    rdfs:label "The Blueprint"@en ;
+    exo:releaseYear "2001"^^xsd:gYear .
+
+ex:Album_The_College_Dropout a exo:Album ;
+    rdfs:label "The College Dropout"@en ;
+    exo:releaseYear "2004"^^xsd:gYear .
+
+ex:Album_The_Dark_Side_of_the_Moon a exo:Album ;
+    rdfs:label "The Dark Side of the Moon"@en ;
+    exo:releaseYear "1973"^^xsd:gYear .
+
+ex:Album_The_Eminem_Show a exo:Album ;
+    rdfs:label "The Eminem Show"@en ;
+    exo:releaseYear "2002"^^xsd:gYear .
+
+ex:Album_The_Freewheelin_Bob_Dylan a exo:Album ;
+    rdfs:label "The Freewheelin Bob Dylan"@en ;
+    exo:releaseYear "1963"^^xsd:gYear .
+
+ex:Album_The_Marshall_Mathers_LP a exo:Album ;
+    rdfs:label "The Marshall Mathers LP"@en ;
+    exo:releaseYear "2000"^^xsd:gYear .
+
+ex:Album_The_Slim_Shady_LP a exo:Album ;
+    rdfs:label "The Slim Shady LP"@en ;
+    exo:releaseYear "1999"^^xsd:gYear .
+
+ex:Album_The_Virgin_Suicides a exo:Album ;
+    rdfs:label "The Virgin Suicides"@en ;
+    exo:releaseYear "2000"^^xsd:gYear .
+
+ex:Album_The_Wall a exo:Album ;
+    rdfs:label "The Wall"@en ;
+    exo:releaseYear "1979"^^xsd:gYear .
+
+ex:Album_Third a exo:Album ;
+    rdfs:label "Third"@en ;
+    exo:releaseYear "2008"^^xsd:gYear .
+
+ex:Album_Thriller a exo:Album ;
+    rdfs:label "Thriller"@en ;
+    exo:releaseYear "1982"^^xsd:gYear .
+
+ex:Album_To_Pimp_a_Butterfly a exo:Album ;
+    rdfs:label "To Pimp a Butterfly"@en ;
+    exo:releaseYear "2015"^^xsd:gYear .
+
+ex:Album_Tranquility_Base_Hotel a exo:Album ;
+    rdfs:label "Tranquility Base Hotel"@en ;
+    exo:releaseYear "2018"^^xsd:gYear .
+
+ex:Album_Unknown_Pleasures a exo:Album ;
+    rdfs:label "Unknown Pleasures"@en ;
+    exo:releaseYear "1979"^^xsd:gYear .
+
+ex:Album_Uprising a exo:Album ;
+    rdfs:label "Uprising"@en ;
+    exo:releaseYear "1980"^^xsd:gYear .
+
+ex:Album_Whatever_People_Say_I_Am a exo:Album ;
+    rdfs:label "Whatever People Say I Am"@en ;
+    exo:releaseYear "2006"^^xsd:gYear .
+
+ex:Album_Whitney_Houston a exo:Album ;
+    rdfs:label "Whitney Houston"@en ;
+    exo:releaseYear "1985"^^xsd:gYear .
+
+ex:Album_Wish_You_Were_Here a exo:Album ;
+    rdfs:label "Wish You Were Here"@en ;
+    exo:releaseYear "1975"^^xsd:gYear .
+
+ex:Album_XY a exo:Album ;
+    rdfs:label "XY"@en ;
+    exo:releaseYear "2005"^^xsd:gYear .
+
+ex:Album_Yeezus a exo:Album ;
+    rdfs:label "Yeezus"@en ;
+    exo:releaseYear "2013"^^xsd:gYear .
+
+ex:Album_Ziggy_Stardust a exo:Album ;
+    rdfs:label "Ziggy Stardust"@en ;
+    exo:releaseYear "1972"^^xsd:gYear .
+
+ex:Album_good_kid_mAAd_city a exo:Album ;
+    rdfs:label "good kid mAAd city"@en ;
+    exo:releaseYear "2012"^^xsd:gYear .
+
+ex:Alex_Turner a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Alex Turner"@en ;
+    exo:memberOf ex:Arctic_Monkeys .
+
+ex:Amy_Winehouse a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Amy Winehouse"@en ;
+    exo:activeFrom "2003"^^xsd:gYear ;
+    exo:activeTo "2011"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_R%26B,
+        ex:Genre_jazz,
+        ex:Genre_soul ;
+    exo:influencedBy ex:Nina_Simone ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Back_to_Black,
+        ex:Album_Frank ;
+    exo:signedTo ex:Label_Island_Records ;
+    exo:wikidataID "Q131272" ;
+    owl:sameAs wd:Q131272 ;
+    foaf:name "Amy Winehouse" .
+
+ex:Aphex_Twin a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Aphex Twin"@en ;
+    exo:activeFrom "1985"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_IDM,
+        ex:Genre_ambient_techno,
+        ex:Genre_electronic ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Drukqs,
+        ex:Album_Richard_D_James_Album,
+        ex:Album_Selected_Ambient_Works_85_92 ;
+    exo:signedTo ex:Label_Warp_Records ;
+    exo:wikidataID "Q208638" ;
+    owl:sameAs wd:Q208638 ;
+    foaf:name "Aphex Twin" .
+
+ex:Aretha_Franklin a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Aretha Franklin"@en ;
+    exo:activeFrom "1956"^^xsd:gYear ;
+    exo:activeTo "2018"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_R%26B,
+        ex:Genre_gospel,
+        ex:Genre_jazz,
+        ex:Genre_soul ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_Amazing_Grace,
+        ex:Album_I_Never_Loved_a_Man_the_Way_I_Love_You,
+        ex:Album_Lady_Soul ;
+    exo:signedTo ex:Label_Atlantic_Records ;
+    exo:wikidataID "Q5990" ;
+    owl:sameAs wd:Q5990 ;
+    foaf:name "Aretha Franklin" .
+
+ex:Bernard_Sumner a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Bernard Sumner"@en ;
+    exo:memberOf ex:Joy_Division .
+
+ex:Beth_Gibbons a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Beth Gibbons"@en ;
+    exo:memberOf ex:Portishead .
+
+ex:Beyonce a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Beyonce"@en ;
+    exo:activeFrom "1997"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "alias" ;
+    exo:hasGenre ex:Genre_R%26B,
+        ex:Genre_pop,
+        ex:Genre_soul ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_Dangerously_in_Love,
+        ex:Album_Lemonade,
+        ex:Album_Renaissance ;
+    exo:signedTo ex:Label_Columbia_Records ;
+    exo:wikidataID "Q83405" ;
+    owl:sameAs wd:Q83405 ;
+    foaf:name "Beyonce" .
+
+ex:Bjork a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Bjork"@en ;
+    exo:activeFrom "1986"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "alias" ;
+    exo:hasGenre ex:Genre_alternative,
+        ex:Genre_art_pop,
+        ex:Genre_electronic,
+        ex:Genre_experimental ;
+    exo:originCountry ex:Country_IS ;
+    exo:releasedAlbum ex:Album_Debut,
+        ex:Album_Homogenic,
+        ex:Album_Post ;
+    exo:signedTo ex:Label_One_Little_Indian ;
+    exo:wikidataID "Q47159" ;
+    owl:sameAs wd:Q47159 ;
+    foaf:name "Bjork" .
+
+ex:Bob_Dylan a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Bob Dylan"@en ;
+    exo:activeFrom "1961"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_blues,
+        ex:Genre_country,
+        ex:Genre_folk,
+        ex:Genre_rock ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_Blood_on_the_Tracks,
+        ex:Album_Highway_61_Revisited,
+        ex:Album_The_Freewheelin_Bob_Dylan ;
+    exo:signedTo ex:Label_Columbia_Records ;
+    exo:wikidataID "Q392" ;
+    owl:sameAs wd:Q392 ;
+    foaf:name "Bob Dylan" .
+
+ex:Bob_Marley a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Bob Marley"@en ;
+    exo:activeFrom "1963"^^xsd:gYear ;
+    exo:activeTo "1981"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_reggae,
+        ex:Genre_rocksteady,
+        ex:Genre_ska ;
+    exo:originCountry ex:Country_JM ;
+    exo:releasedAlbum ex:Album_Catch_a_Fire,
+        ex:Album_Exodus,
+        ex:Album_Uprising ;
+    exo:signedTo ex:Label_Island_Records ;
+    exo:wikidataID "Q76" ;
+    owl:sameAs wd:Q76 ;
+    foaf:name "Bob Marley" .
+
+ex:Brian_May a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Brian May"@en ;
+    exo:memberOf ex:Queen .
+
+ex:Celine_Dion a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Celine Dion"@en ;
+    exo:activeFrom "1980"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "alias" ;
+    exo:hasGenre ex:Genre_R%26B,
+        ex:Genre_chanson,
+        ex:Genre_pop ;
+    exo:originCountry ex:Country_CA ;
+    exo:releasedAlbum ex:Album_A_New_Day_Has_Come,
+        ex:Album_Falling_into_You,
+        ex:Album_Lets_Talk_About_Love ;
+    exo:signedTo ex:Label_Sony_Music ;
+    exo:wikidataID "Q3083" ;
+    owl:sameAs wd:Q3083 ;
+    foaf:name "Celine Dion" .
+
+ex:Charles_Aznavour a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Charles Aznavour"@en ;
+    exo:activeFrom "1946"^^xsd:gYear ;
+    exo:activeTo "2018"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_chanson,
+        ex:Genre_pop ;
+    exo:originCountry ex:Country_FR ;
+    exo:releasedAlbum ex:Album_Je_men_remets_a_toi,
+        ex:Album_La_Boheme,
+        ex:Album_She ;
+    exo:signedTo ex:Label_Barclay_Records ;
+    exo:wikidataID "Q170749" ;
+    owl:sameAs wd:Q170749 ;
+    foaf:name "Charles Aznavour" .
+
+ex:Charlie_Watts a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Charlie Watts"@en ;
+    exo:memberOf ex:Rolling_Stones .
+
+ex:Chris_Martin a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Chris Martin"@en ;
+    exo:memberOf ex:Coldplay .
+
+ex:Colin_Greenwood a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Colin Greenwood"@en ;
+    exo:memberOf ex:Radiohead .
+
+ex:Country_AU a exo:Country ;
+    rdfs:label "AU"@en .
+
+ex:Country_BB a exo:Country ;
+    rdfs:label "BB"@en .
+
+ex:Country_IS a exo:Country ;
+    rdfs:label "IS"@en .
+
+ex:Country_JM a exo:Country ;
+    rdfs:label "JM"@en .
+
+ex:Damon_Albarn a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Damon Albarn"@en ;
+    exo:memberOf ex:Gorillaz .
+
+ex:Dave_Grohl a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Dave Grohl"@en ;
+    exo:memberOf ex:Nirvana .
+
+ex:David_Bowie a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "David Bowie"@en ;
+    exo:activeFrom "1962"^^xsd:gYear ;
+    exo:activeTo "2016"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_art_rock,
+        ex:Genre_glam_rock,
+        ex:Genre_pop ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Heroes,
+        ex:Album_Lets_Dance,
+        ex:Album_Ziggy_Stardust ;
+    exo:signedTo ex:Label_RCA_Records ;
+    exo:wikidataID "Q5383" ;
+    owl:sameAs wd:Q5383 ;
+    foaf:name "David Bowie" .
+
+ex:David_Gilmour a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "David Gilmour"@en ;
+    exo:memberOf ex:Pink_Floyd .
+
+ex:Drake a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Drake"@en ;
+    exo:activeFrom "2001"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "context" ;
+    exo:collaboratedWith ex:Kanye_West ;
+    exo:hasGenre ex:Genre_R%26B,
+        ex:Genre_hip_hop,
+        ex:Genre_trap ;
+    exo:originCountry ex:Country_CA ;
+    exo:releasedAlbum ex:Album_Nothing_Was_the_Same,
+        ex:Album_Scorpion,
+        ex:Album_Take_Care ;
+    exo:signedTo ex:Label_Young_Money ;
+    exo:wikidataID "Q33777" ;
+    owl:sameAs wd:Q33777 ;
+    foaf:name "Drake" .
+
+ex:Ed_O_Brien a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Ed O Brien"@en ;
+    exo:memberOf ex:Radiohead .
+
+ex:Edith_Piaf a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Edith Piaf"@en ;
+    exo:activeFrom "1935"^^xsd:gYear ;
+    exo:activeTo "1963"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "alias" ;
+    exo:hasGenre ex:Genre_chanson,
+        ex:Genre_pop ;
+    exo:originCountry ex:Country_FR ;
+    exo:releasedAlbum ex:Album_Hymne_a_lamour,
+        ex:Album_La_Vie_en_Rose,
+        ex:Album_Non_je_ne_regrette_rien ;
+    exo:signedTo ex:Label_Columbia_Records ;
+    exo:wikidataID "Q1631" ;
+    owl:sameAs wd:Q1631 ;
+    foaf:name "Edith Piaf" .
+
+ex:Eminem a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Eminem"@en ;
+    exo:activeFrom "1992"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_hardcore_hip_hop,
+        ex:Genre_hip_hop,
+        ex:Genre_rap ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_The_Eminem_Show,
+        ex:Album_The_Marshall_Mathers_LP,
+        ex:Album_The_Slim_Shady_LP ;
+    exo:signedTo ex:Label_Interscope_Records ;
+    exo:wikidataID "Q1199" ;
+    owl:sameAs wd:Q1199 ;
+    foaf:name "Eminem" .
+
+ex:Fabrizio_Moretti a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Fabrizio Moretti"@en ;
+    exo:memberOf ex:The_Strokes .
+
+ex:Frank_Sinatra a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Frank Sinatra"@en ;
+    exo:activeFrom "1937"^^xsd:gYear ;
+    exo:activeTo "1998"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_big_band,
+        ex:Genre_jazz,
+        ex:Genre_pop,
+        ex:Genre_swing ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_Come_Fly_with_Me,
+        ex:Album_In_the_Wee_Small_Hours,
+        ex:Album_Songs_for_Swingin_Lovers ;
+    exo:signedTo ex:Label_Capitol_Records ;
+    exo:wikidataID "Q40912" ;
+    owl:sameAs wd:Q40912 ;
+    foaf:name "Frank Sinatra" .
+
+ex:Freddie_Mercury a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Freddie Mercury"@en ;
+    exo:memberOf ex:Queen .
+
+ex:Genre_IDM a exo:MusicGenre ;
+    rdfs:label "IDM"@en .
+
+ex:Genre_alternative a exo:MusicGenre ;
+    rdfs:label "alternative"@en .
+
+ex:Genre_ambient a exo:MusicGenre ;
+    rdfs:label "ambient"@en .
+
+ex:Genre_ambient_techno a exo:MusicGenre ;
+    rdfs:label "ambient techno"@en .
+
+ex:Genre_art_pop a exo:MusicGenre ;
+    rdfs:label "art pop"@en .
+
+ex:Genre_bebop a exo:MusicGenre ;
+    rdfs:label "bebop"@en .
+
+ex:Genre_big_band a exo:MusicGenre ;
+    rdfs:label "big band"@en .
+
+ex:Genre_classical a exo:MusicGenre ;
+    rdfs:label "classical"@en .
+
+ex:Genre_conscious_hip_hop a exo:MusicGenre ;
+    rdfs:label "conscious hip hop"@en .
+
+ex:Genre_dance-punk a exo:MusicGenre ;
+    rdfs:label "dance-punk"@en .
+
+ex:Genre_dancehall a exo:MusicGenre ;
+    rdfs:label "dancehall"@en .
+
+ex:Genre_dream_pop a exo:MusicGenre ;
+    rdfs:label "dream pop"@en .
+
+ex:Genre_east_coast_hip_hop a exo:MusicGenre ;
+    rdfs:label "east coast hip hop"@en .
+
+ex:Genre_electro a exo:MusicGenre ;
+    rdfs:label "electro"@en .
+
+ex:Genre_electronic_rock a exo:MusicGenre ;
+    rdfs:label "electronic rock"@en .
+
+ex:Genre_experimental a exo:MusicGenre ;
+    rdfs:label "experimental"@en .
+
+ex:Genre_folk a exo:MusicGenre ;
+    rdfs:label "folk"@en .
+
+ex:Genre_french_house a exo:MusicGenre ;
+    rdfs:label "french house"@en .
+
+ex:Genre_funk a exo:MusicGenre ;
+    rdfs:label "funk"@en .
+
+ex:Genre_gangsta_rap a exo:MusicGenre ;
+    rdfs:label "gangsta rap"@en .
+
+ex:Genre_garage_rock a exo:MusicGenre ;
+    rdfs:label "garage rock"@en .
+
+ex:Genre_gospel_rap a exo:MusicGenre ;
+    rdfs:label "gospel rap"@en .
+
+ex:Genre_gothic_rock a exo:MusicGenre ;
+    rdfs:label "gothic rock"@en .
+
+ex:Genre_grunge a exo:MusicGenre ;
+    rdfs:label "grunge"@en .
+
+ex:Genre_hardcore_hip_hop a exo:MusicGenre ;
+    rdfs:label "hardcore hip hop"@en .
+
+ex:Genre_heavy_metal a exo:MusicGenre ;
+    rdfs:label "heavy metal"@en .
+
+ex:Genre_house a exo:MusicGenre ;
+    rdfs:label "house"@en .
+
+ex:Genre_jazz_fusion a exo:MusicGenre ;
+    rdfs:label "jazz fusion"@en .
+
+ex:Genre_jazz_rap a exo:MusicGenre ;
+    rdfs:label "jazz rap"@en .
+
+ex:Genre_modal_jazz a exo:MusicGenre ;
+    rdfs:label "modal jazz"@en .
+
+ex:Genre_neo-psychedelia a exo:MusicGenre ;
+    rdfs:label "neo-psychedelia"@en .
+
+ex:Genre_new_wave a exo:MusicGenre ;
+    rdfs:label "new wave"@en .
+
+ex:Genre_pop_rock a exo:MusicGenre ;
+    rdfs:label "pop rock"@en .
+
+ex:Genre_post-Britpop a exo:MusicGenre ;
+    rdfs:label "post-Britpop"@en .
+
+ex:Genre_post-punk a exo:MusicGenre ;
+    rdfs:label "post-punk"@en .
+
+ex:Genre_punk_rock a exo:MusicGenre ;
+    rdfs:label "punk rock"@en .
+
+ex:Genre_rock_and_roll a exo:MusicGenre ;
+    rdfs:label "rock and roll"@en .
+
+ex:Genre_rockabilly a exo:MusicGenre ;
+    rdfs:label "rockabilly"@en .
+
+ex:Genre_rocksteady a exo:MusicGenre ;
+    rdfs:label "rocksteady"@en .
+
+ex:Genre_ska a exo:MusicGenre ;
+    rdfs:label "ska"@en .
+
+ex:Genre_swing a exo:MusicGenre ;
+    rdfs:label "swing"@en .
+
+ex:Genre_trap a exo:MusicGenre ;
+    rdfs:label "trap"@en .
+
+ex:Genre_west_coast_hip_hop a exo:MusicGenre ;
+    rdfs:label "west coast hip hop"@en .
+
+ex:Geoff_Barrow a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Geoff Barrow"@en ;
+    exo:memberOf ex:Portishead .
+
+ex:George_Harrison a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "George Harrison"@en ;
+    exo:memberOf ex:The_Beatles .
+
+ex:Grant_Marshall a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Grant Marshall"@en ;
+    exo:memberOf ex:Massive_Attack .
+
+ex:Guy-Manuel_de_Homem-Christo a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Guy-Manuel de Homem-Christo"@en ;
+    exo:memberOf ex:Daft_Punk .
+
+ex:Guy_Berryman a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Guy Berryman"@en ;
+    exo:memberOf ex:Coldplay .
+
+ex:Ian_Curtis a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Ian Curtis"@en ;
+    exo:memberOf ex:Joy_Division .
+
+ex:Jacques_Brel a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Jacques Brel"@en ;
+    exo:activeFrom "1953"^^xsd:gYear ;
+    exo:activeTo "1978"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_chanson,
+        ex:Genre_pop ;
+    exo:originCountry ex:Country_BE ;
+    exo:releasedAlbum ex:Album_Amsterdam,
+        ex:Album_Ces_gens_la,
+        ex:Album_Ne_me_quitte_pas ;
+    exo:signedTo ex:Label_Philips_Records ;
+    exo:wikidataID "Q192669" ;
+    owl:sameAs wd:Q192669 ;
+    foaf:name "Jacques Brel" .
+
+ex:James_Murphy a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "James Murphy"@en ;
+    exo:memberOf ex:LCD_Soundsystem .
+
+ex:Jamie_Cook a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Jamie Cook"@en ;
+    exo:memberOf ex:Arctic_Monkeys .
+
+ex:Jamie_Hewlett a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Jamie Hewlett"@en ;
+    exo:memberOf ex:Gorillaz .
+
+ex:Jay-Z a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Jay-Z"@en ;
+    exo:activeFrom "1989"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:collaboratedWith ex:Kanye_West ;
+    exo:hasGenre ex:Genre_east_coast_hip_hop,
+        ex:Genre_hip_hop,
+        ex:Genre_rap ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_Reasonable_Doubt,
+        ex:Album_The_Black_Album,
+        ex:Album_The_Blueprint ;
+    exo:signedTo ex:Label_Roc-A-Fella_Records ;
+    exo:wikidataID "Q170930" ;
+    owl:sameAs wd:Q170930 ;
+    foaf:name "Jay-Z" .
+
+ex:Jean-Benoit_Dunckel a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Jean-Benoit Dunckel"@en ;
+    exo:memberOf ex:Air .
+
+ex:Jimmy_Page a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Jimmy Page"@en ;
+    exo:memberOf ex:Led_Zeppelin .
+
+ex:John_Bonham a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "John Bonham"@en ;
+    exo:memberOf ex:Led_Zeppelin .
+
+ex:John_Deacon a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "John Deacon"@en ;
+    exo:memberOf ex:Queen .
+
+ex:John_Lennon a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "John Lennon"@en ;
+    exo:memberOf ex:The_Beatles .
+
+ex:John_Paul_Jones a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "John Paul Jones"@en ;
+    exo:memberOf ex:Led_Zeppelin .
+
+ex:Jonny_Buckland a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Jonny Buckland"@en ;
+    exo:memberOf ex:Coldplay .
+
+ex:Jonny_Greenwood a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Jonny Greenwood"@en ;
+    exo:memberOf ex:Radiohead .
+
+ex:Julian_Casablancas a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Julian Casablancas"@en ;
+    exo:memberOf ex:The_Strokes .
+
+ex:Keith_Richards a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Keith Richards"@en ;
+    exo:memberOf ex:Rolling_Stones .
+
+ex:Kendrick_Lamar a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Kendrick Lamar"@en ;
+    exo:activeFrom "2003"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_conscious_hip_hop,
+        ex:Genre_hip_hop ;
+    exo:influencedBy ex:Tupac_Shakur ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_DAMN,
+        ex:Album_To_Pimp_a_Butterfly,
+        ex:Album_good_kid_mAAd_city ;
+    exo:signedTo ex:Label_Top_Dawg_Entertainment ;
+    exo:wikidataID "Q205303" ;
+    owl:sameAs wd:Q205303 ;
+    foaf:name "Kendrick Lamar" .
+
+ex:Kevin_Parker a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Kevin Parker"@en ;
+    exo:memberOf ex:Tame_Impala .
+
+ex:Krist_Novoselic a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Krist Novoselic"@en ;
+    exo:memberOf ex:Nirvana .
+
+ex:Kurt_Cobain a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Kurt Cobain"@en ;
+    exo:memberOf ex:Nirvana .
+
+ex:Label_Arista_Records a exo:RecordLabel ;
+    rdfs:label "Arista Records"@en .
+
+ex:Label_Barclay_Records a exo:RecordLabel ;
+    rdfs:label "Barclay Records"@en .
+
+ex:Label_Capitol_Records a exo:RecordLabel ;
+    rdfs:label "Capitol Records"@en .
+
+ex:Label_Colpix_Records a exo:RecordLabel ;
+    rdfs:label "Colpix Records"@en .
+
+ex:Label_DFA_Records a exo:RecordLabel ;
+    rdfs:label "DFA Records"@en .
+
+ex:Label_DGC_Records a exo:RecordLabel ;
+    rdfs:label "DGC Records"@en .
+
+ex:Label_Death_Row_Records a exo:RecordLabel ;
+    rdfs:label "Death Row Records"@en .
+
+ex:Label_Decca_Records a exo:RecordLabel ;
+    rdfs:label "Decca Records"@en .
+
+ex:Label_Def_Jam_Recordings a exo:RecordLabel ;
+    rdfs:label "Def Jam Recordings"@en .
+
+ex:Label_Domino_Records a exo:RecordLabel ;
+    rdfs:label "Domino Records"@en .
+
+ex:Label_Epic_Records a exo:RecordLabel ;
+    rdfs:label "Epic Records"@en .
+
+ex:Label_Factory_Records a exo:RecordLabel ;
+    rdfs:label "Factory Records"@en .
+
+ex:Label_Go_Discs a exo:RecordLabel ;
+    rdfs:label "Go! Discs"@en .
+
+ex:Label_Interscope_Records a exo:RecordLabel ;
+    rdfs:label "Interscope Records"@en .
+
+ex:Label_Modular_Recordings a exo:RecordLabel ;
+    rdfs:label "Modular Recordings"@en .
+
+ex:Label_Mosaert a exo:RecordLabel ;
+    rdfs:label "Mosaert"@en .
+
+ex:Label_One_Little_Indian a exo:RecordLabel ;
+    rdfs:label "One Little Indian"@en .
+
+ex:Label_Sony_Music a exo:RecordLabel ;
+    rdfs:label "Sony Music"@en .
+
+ex:Label_Source_Records a exo:RecordLabel ;
+    rdfs:label "Source Records"@en .
+
+ex:Label_Top_Dawg_Entertainment a exo:RecordLabel ;
+    rdfs:label "Top Dawg Entertainment"@en .
+
+ex:Label_Warp_Records a exo:RecordLabel ;
+    rdfs:label "Warp Records"@en .
+
+ex:Label_XL_Recordings a exo:RecordLabel ;
+    rdfs:label "XL Recordings"@en .
+
+ex:Label_Young_Money a exo:RecordLabel ;
+    rdfs:label "Young Money"@en .
+
+ex:MC_Solaar a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "MC Solaar"@en ;
+    exo:activeFrom "1990"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_hip_hop,
+        ex:Genre_jazz_rap,
+        ex:Genre_rap ;
+    exo:originCountry ex:Country_FR ;
+    exo:releasedAlbum ex:Album_Chapitre_7,
+        ex:Album_Prose_Combat,
+        ex:Album_Qui_seme_le_vent_recolte_le_tempo ;
+    exo:signedTo ex:Label_Polydor ;
+    exo:wikidataID "Q520922" ;
+    owl:sameAs wd:Q520922 ;
+    foaf:name "MC Solaar" .
+
+ex:Matt_Helders a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Matt Helders"@en ;
+    exo:memberOf ex:Arctic_Monkeys .
+
+ex:Michael_Jackson a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Michael Jackson"@en ;
+    exo:activeFrom "1964"^^xsd:gYear ;
+    exo:activeTo "2009"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_R%26B,
+        ex:Genre_funk,
+        ex:Genre_pop,
+        ex:Genre_soul ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_Bad,
+        ex:Album_Dangerous,
+        ex:Album_Thriller ;
+    exo:signedTo ex:Label_Epic_Records ;
+    exo:wikidataID "Q2831" ;
+    owl:sameAs wd:Q2831 ;
+    foaf:name "Michael Jackson" .
+
+ex:Mick_Jagger a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Mick Jagger"@en ;
+    exo:memberOf ex:Rolling_Stones .
+
+ex:Miles_Davis a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Miles Davis"@en ;
+    exo:activeFrom "1944"^^xsd:gYear ;
+    exo:activeTo "1991"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_bebop,
+        ex:Genre_jazz,
+        ex:Genre_jazz_fusion,
+        ex:Genre_modal_jazz ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_Bitches_Brew,
+        ex:Album_Kind_of_Blue,
+        ex:Album_Sketches_of_Spain ;
+    exo:signedTo ex:Label_Columbia_Records ;
+    exo:wikidataID "Q93341" ;
+    owl:sameAs wd:Q93341 ;
+    foaf:name "Miles Davis" .
+
+ex:Mylene_Farmer a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Mylene Farmer"@en ;
+    exo:activeFrom "1984"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "alias" ;
+    exo:hasGenre ex:Genre_electronic,
+        ex:Genre_pop,
+        ex:Genre_synth-pop ;
+    exo:originCountry ex:Country_FR ;
+    exo:releasedAlbum ex:Album_Ainsi_soit_je,
+        ex:Album_Anamorphosee,
+        ex:Album_Cendres_de_lune ;
+    exo:signedTo ex:Label_Polydor ;
+    exo:wikidataID "Q235196" ;
+    owl:sameAs wd:Q235196 ;
+    foaf:name "Mylene Farmer" .
+
+ex:Nick_Mason a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Nick Mason"@en ;
+    exo:memberOf ex:Pink_Floyd .
+
+ex:Nick_O_Malley a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Nick O Malley"@en ;
+    exo:memberOf ex:Arctic_Monkeys .
+
+ex:Nick_Valensi a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Nick Valensi"@en ;
+    exo:memberOf ex:The_Strokes .
+
+ex:Nicolas_Godin a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Nicolas Godin"@en ;
+    exo:memberOf ex:Air .
+
+ex:Nikolai_Fraiture a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Nikolai Fraiture"@en ;
+    exo:memberOf ex:The_Strokes .
+
+ex:Paul_McCartney a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Paul McCartney"@en ;
+    exo:memberOf ex:The_Beatles .
+
+ex:Peter_Hook a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Peter Hook"@en ;
+    exo:memberOf ex:Joy_Division .
+
+ex:Philip_Selway a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Philip Selway"@en ;
+    exo:memberOf ex:Radiohead .
+
+ex:Richard_Wright a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Richard Wright"@en ;
+    exo:memberOf ex:Pink_Floyd .
+
+ex:Rihanna a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Rihanna"@en ;
+    exo:activeFrom "2003"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_R%26B,
+        ex:Genre_dancehall,
+        ex:Genre_pop ;
+    exo:originCountry ex:Country_BB ;
+    exo:releasedAlbum ex:Album_Anti,
+        ex:Album_Good_Girl_Gone_Bad,
+        ex:Album_Rated_R ;
+    exo:signedTo ex:Label_Def_Jam_Recordings ;
+    exo:wikidataID "Q36153" ;
+    owl:sameAs wd:Q36153 ;
+    foaf:name "Rihanna" .
+
+ex:Ringo_Starr a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Ringo Starr"@en ;
+    exo:memberOf ex:The_Beatles .
+
+ex:Robert_Del_Naja a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Robert Del Naja"@en ;
+    exo:memberOf ex:Massive_Attack .
+
+ex:Robert_Plant a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Robert Plant"@en ;
+    exo:memberOf ex:Led_Zeppelin .
+
+ex:Roger_Taylor a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Roger Taylor"@en ;
+    exo:memberOf ex:Queen .
+
+ex:Roger_Waters a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Roger Waters"@en ;
+    exo:memberOf ex:Pink_Floyd .
+
+ex:Ronnie_Wood a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Ronnie Wood"@en ;
+    exo:memberOf ex:Rolling_Stones .
+
+ex:Serge_Gainsbourg a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Serge Gainsbourg"@en ;
+    exo:activeFrom "1954"^^xsd:gYear ;
+    exo:activeTo "1991"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_chanson,
+        ex:Genre_pop,
+        ex:Genre_reggae ;
+    exo:originCountry ex:Country_FR ;
+    exo:releasedAlbum ex:Album_Aux_armes_et_caetera,
+        ex:Album_Histoire_de_Melody_Nelson,
+        ex:Album_L_Homme_a_tete_de_chou ;
+    exo:signedTo ex:Label_Philips_Records ;
+    exo:wikidataID "Q232969" ;
+    owl:sameAs wd:Q232969 ;
+    foaf:name "Serge Gainsbourg" .
+
+ex:Stephen_Morris a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Stephen Morris"@en ;
+    exo:memberOf ex:Joy_Division .
+
+ex:Stromae a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Stromae"@en ;
+    exo:activeFrom "2009"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_electro,
+        ex:Genre_hip_hop,
+        ex:Genre_pop ;
+    exo:originCountry ex:Country_BE ;
+    exo:releasedAlbum ex:Album_Cheese,
+        ex:Album_Multitude,
+        ex:Album_Racine_Carree ;
+    exo:signedTo ex:Label_Mosaert ;
+    exo:wikidataID "Q193337" ;
+    owl:sameAs wd:Q193337 ;
+    foaf:name "Stromae" .
+
+ex:Syd_Barrett a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Syd Barrett"@en ;
+    exo:memberOf ex:Pink_Floyd .
+
+ex:Thom_Yorke a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Thom Yorke"@en ;
+    exo:memberOf ex:Radiohead .
+
+ex:Thomas_Bangalter a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Thomas Bangalter"@en ;
+    exo:memberOf ex:Daft_Punk .
+
+ex:Whitney_Houston a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Whitney Houston"@en ;
+    exo:activeFrom "1983"^^xsd:gYear ;
+    exo:activeTo "2012"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_R%26B,
+        ex:Genre_gospel,
+        ex:Genre_pop,
+        ex:Genre_soul ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_I_Look_to_You,
+        ex:Album_My_Love_Is_Your_Love,
+        ex:Album_Whitney_Houston ;
+    exo:signedTo ex:Label_Arista_Records ;
+    exo:wikidataID "Q37079" ;
+    owl:sameAs wd:Q37079 ;
+    foaf:name "Whitney Houston" .
+
+ex:Will_Champion a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Will Champion"@en ;
+    exo:memberOf ex:Coldplay .
+
+wd:Q11036 owl:sameAs ex:Rolling_Stones .
+
+wd:Q11649 owl:sameAs ex:Nirvana .
+
+wd:Q1199 owl:sameAs ex:Eminem .
+
+wd:Q128309 owl:sameAs ex:Radiohead .
+
+wd:Q128439 owl:sameAs ex:Nina_Simone .
+
+wd:Q1299 owl:sameAs ex:The_Beatles .
+
+wd:Q131272 owl:sameAs ex:Amy_Winehouse .
+
+wd:Q134541 owl:sameAs ex:Arctic_Monkeys .
+
+wd:Q1352505 owl:sameAs ex:LCD_Soundsystem .
+
+wd:Q155818 owl:sameAs ex:Tupac_Shakur .
+
+wd:Q15862 owl:sameAs ex:Queen .
+
+wd:Q1631 owl:sameAs ex:Edith_Piaf .
+
+wd:Q170749 owl:sameAs ex:Charles_Aznavour .
+
+wd:Q170930 owl:sameAs ex:Jay-Z .
+
+wd:Q183048 owl:sameAs ex:The_Strokes .
+
+wd:Q183412 owl:sameAs ex:Joy_Division .
+
+wd:Q183504 owl:sameAs ex:Massive_Attack .
+
+wd:Q184803 owl:sameAs ex:Daft_Punk .
+
+wd:Q192669 owl:sameAs ex:Jacques_Brel .
+
+wd:Q193337 owl:sameAs ex:Stromae .
+
+wd:Q205303 owl:sameAs ex:Kendrick_Lamar .
+
+wd:Q208638 owl:sameAs ex:Aphex_Twin .
+
+wd:Q217294 owl:sameAs ex:Portishead .
+
+wd:Q2306 owl:sameAs ex:Pink_Floyd .
+
+wd:Q232969 owl:sameAs ex:Serge_Gainsbourg .
+
+wd:Q2331 owl:sameAs ex:Led_Zeppelin .
+
+wd:Q235196 owl:sameAs ex:Mylene_Farmer .
+
+wd:Q259732 owl:sameAs ex:Gorillaz .
+
+wd:Q2831 owl:sameAs ex:Michael_Jackson .
+
+wd:Q303 owl:sameAs ex:Elvis_Presley .
+
+wd:Q3083 owl:sameAs ex:Celine_Dion .
+
+wd:Q33777 owl:sameAs ex:Drake .
+
+wd:Q36153 owl:sameAs ex:Rihanna .
+
+wd:Q37079 owl:sameAs ex:Whitney_Houston .
+
+wd:Q389488 owl:sameAs ex:Air .
+
+wd:Q392 owl:sameAs ex:Bob_Dylan .
+
+wd:Q40912 owl:sameAs ex:Frank_Sinatra .
+
+wd:Q44088 owl:sameAs ex:Kanye_West .
+
+wd:Q45188 owl:sameAs ex:Coldplay .
+
+wd:Q47159 owl:sameAs ex:Bjork .
+
+wd:Q520922 owl:sameAs ex:MC_Solaar .
+
+wd:Q5383 owl:sameAs ex:David_Bowie .
+
+wd:Q5990 owl:sameAs ex:Aretha_Franklin .
+
+wd:Q76 owl:sameAs ex:Bob_Marley .
+
+wd:Q81771 owl:sameAs ex:Adele .
+
+wd:Q83405 owl:sameAs ex:Beyonce .
+
+wd:Q869612 owl:sameAs ex:Tame_Impala .
+
+wd:Q93341 owl:sameAs ex:Miles_Davis .
+
+ex:Country_BE a exo:Country ;
+    rdfs:label "BE"@en .
+
+ex:Country_CA a exo:Country ;
+    rdfs:label "CA"@en .
+
+ex:Elvis_Presley a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Elvis Presley"@en ;
+    exo:activeFrom "1954"^^xsd:gYear ;
+    exo:activeTo "1977"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_country,
+        ex:Genre_pop,
+        ex:Genre_rock_and_roll,
+        ex:Genre_rockabilly ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_Elvis_Is_Back,
+        ex:Album_Elvis_Presley,
+        ex:Album_From_Elvis_in_Memphis ;
+    exo:signedTo ex:Label_RCA_Records ;
+    exo:wikidataID "Q303" ;
+    owl:sameAs wd:Q303 ;
+    foaf:name "Elvis Presley" .
+
+ex:Genre_blues a exo:MusicGenre ;
+    rdfs:label "blues"@en .
+
+ex:Genre_blues_rock a exo:MusicGenre ;
+    rdfs:label "blues rock"@en .
+
+ex:Genre_country a exo:MusicGenre ;
+    rdfs:label "country"@en .
+
+ex:Genre_downtempo a exo:MusicGenre ;
+    rdfs:label "downtempo"@en .
+
+ex:Genre_glam_rock a exo:MusicGenre ;
+    rdfs:label "glam rock"@en .
+
+ex:Genre_gospel a exo:MusicGenre ;
+    rdfs:label "gospel"@en .
+
+ex:Genre_indie_rock a exo:MusicGenre ;
+    rdfs:label "indie rock"@en .
+
+ex:Genre_progressive_rock a exo:MusicGenre ;
+    rdfs:label "progressive rock"@en .
+
+ex:Genre_reggae a exo:MusicGenre ;
+    rdfs:label "reggae"@en .
+
+ex:Genre_synth-pop a exo:MusicGenre ;
+    rdfs:label "synth-pop"@en .
+
+ex:Genre_trip_hop a exo:MusicGenre ;
+    rdfs:label "trip hop"@en .
+
+ex:LCD_Soundsystem a exo:MusicGroup ;
+    rdfs:label "LCD Soundsystem"@en ;
+    exo:activeFrom "2002"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_dance-punk,
+        ex:Genre_electronic_rock,
+        ex:Genre_post-punk_revival ;
+    exo:hasMember ex:James_Murphy ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_American_Dream,
+        ex:Album_LCD_Soundsystem,
+        ex:Album_Sound_of_Silver ;
+    exo:signedTo ex:Label_DFA_Records ;
+    exo:wikidataID "Q1352505" ;
+    owl:sameAs wd:Q1352505 ;
+    foaf:name "LCD Soundsystem" .
+
+ex:Label_Atlantic_Records a exo:RecordLabel ;
+    rdfs:label "Atlantic Records"@en .
+
+ex:Label_EMI a exo:RecordLabel ;
+    rdfs:label "EMI"@en .
+
+ex:Label_Island_Records a exo:RecordLabel ;
+    rdfs:label "Island Records"@en .
+
+ex:Label_Philips_Records a exo:RecordLabel ;
+    rdfs:label "Philips Records"@en .
+
+ex:Label_Polydor a exo:RecordLabel ;
+    rdfs:label "Polydor"@en .
+
+ex:Label_Roc-A-Fella_Records a exo:RecordLabel ;
+    rdfs:label "Roc-A-Fella Records"@en .
+
+ex:Label_Virgin_Records a exo:RecordLabel ;
+    rdfs:label "Virgin Records"@en .
+
+ex:Nina_Simone a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Nina Simone"@en ;
+    exo:activeFrom "1954"^^xsd:gYear ;
+    exo:activeTo "2003"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_blues,
+        ex:Genre_classical,
+        ex:Genre_jazz,
+        ex:Genre_soul ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_I_Put_a_Spell_on_You,
+        ex:Album_Little_Girl_Blue,
+        ex:Album_Pastel_Blues ;
+    exo:signedTo ex:Label_Colpix_Records ;
+    exo:wikidataID "Q128439" ;
+    owl:sameAs wd:Q128439 ;
+    foaf:name "Nina Simone" .
+
+ex:Tame_Impala a exo:MusicGroup ;
+    rdfs:label "Tame Impala"@en ;
+    exo:activeFrom "2007"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_neo-psychedelia,
+        ex:Genre_psychedelic_rock,
+        ex:Genre_synth-pop ;
+    exo:hasMember ex:Kevin_Parker ;
+    exo:originCountry ex:Country_AU ;
+    exo:releasedAlbum ex:Album_Currents,
+        ex:Album_Innerspeaker,
+        ex:Album_Lonerism ;
+    exo:signedTo ex:Label_Modular_Recordings ;
+    exo:wikidataID "Q869612" ;
+    owl:sameAs wd:Q869612 ;
+    foaf:name "Tame Impala" .
+
+ex:Tupac_Shakur a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Tupac Shakur"@en ;
+    exo:activeFrom "1987"^^xsd:gYear ;
+    exo:activeTo "1996"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_gangsta_rap,
+        ex:Genre_hip_hop,
+        ex:Genre_west_coast_hip_hop ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_2Pacalypse_Now,
+        ex:Album_All_Eyez_on_Me,
+        ex:Album_Me_Against_the_World ;
+    exo:signedTo ex:Label_Death_Row_Records ;
+    exo:wikidataID "Q155818" ;
+    owl:sameAs wd:Q155818 ;
+    foaf:name "Tupac Shakur" .
+
+ex:Air a exo:MusicGroup ;
+    rdfs:label "Air"@en ;
+    exo:activeFrom "1995"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "context" ;
+    exo:hasGenre ex:Genre_ambient,
+        ex:Genre_dream_pop,
+        ex:Genre_electronic ;
+    exo:hasMember ex:Jean-Benoit_Dunckel,
+        ex:Nicolas_Godin ;
+    exo:originCountry ex:Country_FR ;
+    exo:releasedAlbum ex:Album_Moon_Safari,
+        ex:Album_Talkie_Walkie,
+        ex:Album_The_Virgin_Suicides ;
+    exo:signedTo ex:Label_Source_Records ;
+    exo:wikidataID "Q389488" ;
+    owl:sameAs wd:Q389488 ;
+    foaf:name "Air" .
+
+ex:Daft_Punk a exo:MusicGroup ;
+    rdfs:label "Daft Punk"@en ;
+    exo:activeFrom "1993"^^xsd:gYear ;
+    exo:activeTo "2021"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:collaboratedWith ex:Gorillaz ;
+    exo:hasGenre ex:Genre_electronic,
+        ex:Genre_french_house,
+        ex:Genre_house ;
+    exo:hasMember ex:Guy-Manuel_de_Homem-Christo,
+        ex:Thomas_Bangalter ;
+    exo:originCountry ex:Country_FR ;
+    exo:releasedAlbum ex:Album_Discovery,
+        ex:Album_Homework,
+        ex:Album_Random_Access_Memories ;
+    exo:signedTo ex:Label_Virgin_Records ;
+    exo:wikidataID "Q184803" ;
+    owl:sameAs wd:Q184803 ;
+    foaf:name "Daft Punk" .
+
+ex:Genre_art_rock a exo:MusicGenre ;
+    rdfs:label "art rock"@en .
+
+ex:Genre_hard_rock a exo:MusicGenre ;
+    rdfs:label "hard rock"@en .
+
+ex:Genre_post-punk_revival a exo:MusicGenre ;
+    rdfs:label "post-punk revival"@en .
+
+ex:Genre_psychedelic_rock a exo:MusicGenre ;
+    rdfs:label "psychedelic rock"@en .
+
+ex:Kanye_West a exo:SoloArtist,
+        foaf:Person ;
+    rdfs:label "Kanye West"@en ;
+    exo:activeFrom "1996"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_gospel_rap,
+        ex:Genre_hip_hop,
+        ex:Genre_rap ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_My_Beautiful_Dark_Twisted_Fantasy,
+        ex:Album_The_College_Dropout,
+        ex:Album_Yeezus ;
+    exo:signedTo ex:Label_Roc-A-Fella_Records ;
+    exo:wikidataID "Q44088" ;
+    owl:sameAs wd:Q44088 ;
+    foaf:name "Kanye West" .
+
+ex:Label_RCA_Records a exo:RecordLabel ;
+    rdfs:label "RCA Records"@en .
+
+ex:Genre_rap a exo:MusicGenre ;
+    rdfs:label "rap"@en .
+
+ex:Genre_rock a exo:MusicGenre ;
+    rdfs:label "rock"@en .
+
+ex:Gorillaz a exo:MusicGroup ;
+    rdfs:label "Gorillaz"@en ;
+    exo:activeFrom "1998"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_alternative_rock,
+        ex:Genre_electronic,
+        ex:Genre_hip_hop ;
+    exo:hasMember ex:Damon_Albarn,
+        ex:Jamie_Hewlett ;
+    exo:influencedBy ex:The_Beatles ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Demon_Days,
+        ex:Album_Gorillaz,
+        ex:Album_Plastic_Beach ;
+    exo:signedTo ex:Label_Parlophone ;
+    exo:wikidataID "Q259732" ;
+    owl:sameAs wd:Q259732 ;
+    foaf:name "Gorillaz" .
+
+ex:Label_Columbia_Records a exo:RecordLabel ;
+    rdfs:label "Columbia Records"@en .
+
+ex:Label_Parlophone a exo:RecordLabel ;
+    rdfs:label "Parlophone"@en .
+
+ex:Massive_Attack a exo:MusicGroup ;
+    rdfs:label "Massive Attack"@en ;
+    exo:activeFrom "1988"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_downtempo,
+        ex:Genre_electronic,
+        ex:Genre_trip_hop ;
+    exo:hasMember ex:Grant_Marshall,
+        ex:Robert_Del_Naja ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Blue_Lines,
+        ex:Album_Heligoland,
+        ex:Album_Mezzanine ;
+    exo:signedTo ex:Label_Virgin_Records ;
+    exo:wikidataID "Q183504" ;
+    owl:sameAs wd:Q183504 ;
+    foaf:name "Massive Attack" .
+
+ex:Nirvana a exo:MusicGroup ;
+    rdfs:label "Nirvana"@en ;
+    exo:activeFrom "1987"^^xsd:gYear ;
+    exo:activeTo "1994"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "context" ;
+    exo:hasGenre ex:Genre_alternative_rock,
+        ex:Genre_grunge,
+        ex:Genre_punk_rock ;
+    exo:hasMember ex:Dave_Grohl,
+        ex:Krist_Novoselic,
+        ex:Kurt_Cobain ;
+    exo:influencedBy ex:The_Beatles ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_Bleach,
+        ex:Album_In_Utero,
+        ex:Album_Nevermind ;
+    exo:signedTo ex:Label_DGC_Records ;
+    exo:wikidataID "Q11649" ;
+    owl:sameAs wd:Q11649 ;
+    foaf:name "Nirvana" .
+
+ex:Portishead a exo:MusicGroup ;
+    rdfs:label "Portishead"@en ;
+    exo:activeFrom "1991"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_downtempo,
+        ex:Genre_electronic,
+        ex:Genre_trip_hop ;
+    exo:hasMember ex:Adrian_Utley,
+        ex:Beth_Gibbons,
+        ex:Geoff_Barrow ;
+    exo:influencedBy ex:Massive_Attack ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Dummy,
+        ex:Album_Portishead,
+        ex:Album_Third ;
+    exo:signedTo ex:Label_Go_Discs ;
+    exo:wikidataID "Q217294" ;
+    owl:sameAs wd:Q217294 ;
+    foaf:name "Portishead" .
+
+ex:Arctic_Monkeys a exo:MusicGroup ;
+    rdfs:label "Arctic Monkeys"@en ;
+    exo:activeFrom "2002"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_alternative_rock,
+        ex:Genre_indie_rock,
+        ex:Genre_post-punk_revival ;
+    exo:hasMember ex:Alex_Turner,
+        ex:Jamie_Cook,
+        ex:Matt_Helders,
+        ex:Nick_O_Malley ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_AM,
+        ex:Album_Tranquility_Base_Hotel,
+        ex:Album_Whatever_People_Say_I_Am ;
+    exo:signedTo ex:Label_Domino_Records ;
+    exo:wikidataID "Q134541" ;
+    owl:sameAs wd:Q134541 ;
+    foaf:name "Arctic Monkeys" .
+
+ex:Coldplay a exo:MusicGroup ;
+    rdfs:label "Coldplay"@en ;
+    exo:activeFrom "1996"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_alternative_rock,
+        ex:Genre_pop_rock,
+        ex:Genre_post-Britpop ;
+    exo:hasMember ex:Chris_Martin,
+        ex:Guy_Berryman,
+        ex:Jonny_Buckland,
+        ex:Will_Champion ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_A_Rush_of_Blood_to_the_Head,
+        ex:Album_Parachutes,
+        ex:Album_XY ;
+    exo:signedTo ex:Label_Parlophone ;
+    exo:wikidataID "Q45188" ;
+    owl:sameAs wd:Q45188 ;
+    foaf:name "Coldplay" .
+
+ex:Genre_alternative_rock a exo:MusicGenre ;
+    rdfs:label "alternative rock"@en .
+
+ex:Genre_chanson a exo:MusicGenre ;
+    rdfs:label "chanson"@en .
+
+ex:Genre_jazz a exo:MusicGenre ;
+    rdfs:label "jazz"@en .
+
+ex:Joy_Division a exo:MusicGroup ;
+    rdfs:label "Joy Division"@en ;
+    exo:activeFrom "1976"^^xsd:gYear ;
+    exo:activeTo "1980"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_gothic_rock,
+        ex:Genre_new_wave,
+        ex:Genre_post-punk ;
+    exo:hasMember ex:Bernard_Sumner,
+        ex:Ian_Curtis,
+        ex:Peter_Hook,
+        ex:Stephen_Morris ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Closer,
+        ex:Album_Unknown_Pleasures ;
+    exo:signedTo ex:Label_Factory_Records ;
+    exo:wikidataID "Q183412" ;
+    owl:sameAs wd:Q183412 ;
+    foaf:name "Joy Division" .
+
+ex:Led_Zeppelin a exo:MusicGroup ;
+    rdfs:label "Led Zeppelin"@en ;
+    exo:activeFrom "1968"^^xsd:gYear ;
+    exo:activeTo "1980"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_blues_rock,
+        ex:Genre_hard_rock,
+        ex:Genre_heavy_metal ;
+    exo:hasMember ex:Jimmy_Page,
+        ex:John_Bonham,
+        ex:John_Paul_Jones,
+        ex:Robert_Plant ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Houses_of_the_Holy,
+        ex:Album_Led_Zeppelin_IV,
+        ex:Album_Physical_Graffiti ;
+    exo:signedTo ex:Label_Atlantic_Records ;
+    exo:wikidataID "Q2331" ;
+    owl:sameAs wd:Q2331 ;
+    foaf:name "Led Zeppelin" .
+
+ex:Queen a exo:MusicGroup ;
+    rdfs:label "Queen"@en ;
+    exo:activeFrom "1970"^^xsd:gYear ;
+    exo:alignmentConfidence 0.97 ;
+    exo:alignmentStrategy "context" ;
+    exo:hasGenre ex:Genre_glam_rock,
+        ex:Genre_hard_rock,
+        ex:Genre_progressive_rock,
+        ex:Genre_rock ;
+    exo:hasMember ex:Brian_May,
+        ex:Freddie_Mercury,
+        ex:John_Deacon,
+        ex:Roger_Taylor ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_A_Night_at_the_Opera,
+        ex:Album_Jazz,
+        ex:Album_News_of_the_World ;
+    exo:signedTo ex:Label_EMI ;
+    exo:wikidataID "Q15862" ;
+    owl:sameAs wd:Q15862 ;
+    foaf:name "Queen" .
+
+ex:Rolling_Stones a exo:MusicGroup ;
+    rdfs:label "Rolling Stones"@en ;
+    exo:activeFrom "1962"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_blues_rock,
+        ex:Genre_hard_rock,
+        ex:Genre_rock ;
+    exo:hasMember ex:Charlie_Watts,
+        ex:Keith_Richards,
+        ex:Mick_Jagger,
+        ex:Ronnie_Wood ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Exile_on_Main_St,
+        ex:Album_Let_It_Bleed,
+        ex:Album_Sticky_Fingers ;
+    exo:signedTo ex:Label_Decca_Records ;
+    exo:wikidataID "Q11036" ;
+    owl:sameAs wd:Q11036 ;
+    foaf:name "Rolling Stones" .
+
+ex:Radiohead a exo:MusicGroup ;
+    rdfs:label "Radiohead"@en ;
+    exo:activeFrom "1985"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_alternative_rock,
+        ex:Genre_art_rock,
+        ex:Genre_electronic ;
+    exo:hasMember ex:Colin_Greenwood,
+        ex:Ed_O_Brien,
+        ex:Jonny_Greenwood,
+        ex:Philip_Selway,
+        ex:Thom_Yorke ;
+    exo:influencedBy ex:Pink_Floyd ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_In_Rainbows,
+        ex:Album_Kid_A,
+        ex:Album_OK_Computer ;
+    exo:signedTo ex:Label_Parlophone ;
+    exo:wikidataID "Q128309" ;
+    owl:sameAs wd:Q128309 ;
+    foaf:name "Radiohead" .
+
+ex:The_Strokes a exo:MusicGroup ;
+    rdfs:label "The Strokes"@en ;
+    exo:activeFrom "1998"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_garage_rock,
+        ex:Genre_indie_rock,
+        ex:Genre_post-punk_revival ;
+    exo:hasMember ex:Albert_Hammond_Jr,
+        ex:Fabrizio_Moretti,
+        ex:Julian_Casablancas,
+        ex:Nick_Valensi,
+        ex:Nikolai_Fraiture ;
+    exo:originCountry ex:Country_US ;
+    exo:releasedAlbum ex:Album_First_Impressions_of_Earth,
+        ex:Album_Is_This_It,
+        ex:Album_Room_on_Fire ;
+    exo:signedTo ex:Label_RCA_Records ;
+    exo:wikidataID "Q183048" ;
+    owl:sameAs wd:Q183048 ;
+    foaf:name "The Strokes" .
+
+ex:Country_FR a exo:Country ;
+    rdfs:label "FR"@en .
+
+ex:Genre_soul a exo:MusicGenre ;
+    rdfs:label "soul"@en .
+
+ex:Pink_Floyd a exo:MusicGroup ;
+    rdfs:label "Pink Floyd"@en ;
+    exo:activeFrom "1965"^^xsd:gYear ;
+    exo:activeTo "2014"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_art_rock,
+        ex:Genre_progressive_rock,
+        ex:Genre_psychedelic_rock ;
+    exo:hasMember ex:David_Gilmour,
+        ex:Nick_Mason,
+        ex:Richard_Wright,
+        ex:Roger_Waters,
+        ex:Syd_Barrett ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_The_Dark_Side_of_the_Moon,
+        ex:Album_The_Wall,
+        ex:Album_Wish_You_Were_Here ;
+    exo:signedTo ex:Label_EMI ;
+    exo:wikidataID "Q2306" ;
+    owl:sameAs wd:Q2306 ;
+    foaf:name "Pink Floyd" .
+
+ex:The_Beatles a exo:MusicGroup ;
+    rdfs:label "The Beatles"@en ;
+    exo:activeFrom "1960"^^xsd:gYear ;
+    exo:activeTo "1970"^^xsd:gYear ;
+    exo:alignmentConfidence 0.99 ;
+    exo:alignmentStrategy "exact" ;
+    exo:hasGenre ex:Genre_pop,
+        ex:Genre_psychedelic_rock,
+        ex:Genre_rock ;
+    exo:hasMember ex:George_Harrison,
+        ex:John_Lennon,
+        ex:Paul_McCartney,
+        ex:Ringo_Starr ;
+    exo:influencedBy ex:Elvis_Presley ;
+    exo:originCountry ex:Country_GB ;
+    exo:releasedAlbum ex:Album_Abbey_Road,
+        ex:Album_Let_It_Be,
+        ex:Album_Revolver ;
+    exo:signedTo ex:Label_Parlophone ;
+    exo:wikidataID "Q1299" ;
+    owl:sameAs wd:Q1299 ;
+    foaf:name "The Beatles" .
+
+ex:Genre_R%26B a exo:MusicGenre ;
+    rdfs:label "R&B"@en .
+
+ex:Genre_electronic a exo:MusicGenre ;
+    rdfs:label "electronic"@en .
+
+ex:Genre_hip_hop a exo:MusicGenre ;
+    rdfs:label "hip hop"@en .
+
+exo:Artist a owl:Class ;
+    rdfs:label "Artist"@en .
+
+exo:Country a owl:Class ;
+    rdfs:label "Country"@en .
+
+ex:Country_GB a exo:Country ;
+    rdfs:label "GB"@en .
+
+ex:Genre_pop a exo:MusicGenre ;
+    rdfs:label "pop"@en .
+
+ex:Country_US a exo:Country ;
+    rdfs:label "US"@en .
+
+exo:MusicGroup a owl:Class ;
+    rdfs:label "MusicGroup"@en ;
+    rdfs:subClassOf exo:Artist .
+
+exo:RecordLabel a owl:Class ;
+    rdfs:label "RecordLabel"@en .
+
+exo:MusicGenre a owl:Class ;
+    rdfs:label "MusicGenre"@en .
+
+exo:SoloArtist a owl:Class ;
+    rdfs:label "SoloArtist"@en ;
+    rdfs:subClassOf exo:Artist .
+
+exo:Album a owl:Class ;
+    rdfs:label "Album"@en .
+

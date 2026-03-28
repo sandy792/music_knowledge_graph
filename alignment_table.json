@@ -1,0 +1,382 @@
+{
+  "alignement_entites": [
+    {
+      "entite_privee": "ex:Daft_Punk",
+      "uri_wikidata": "wd:Q184803",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Stromae",
+      "uri_wikidata": "wd:Q193337",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Celine_Dion",
+      "uri_wikidata": "wd:Q3083",
+      "confiance": 0.97,
+      "strategie": "alias"
+    },
+    {
+      "entite_privee": "ex:Edith_Piaf",
+      "uri_wikidata": "wd:Q1631",
+      "confiance": 0.97,
+      "strategie": "alias"
+    },
+    {
+      "entite_privee": "ex:Serge_Gainsbourg",
+      "uri_wikidata": "wd:Q232969",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Charles_Aznavour",
+      "uri_wikidata": "wd:Q170749",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Jacques_Brel",
+      "uri_wikidata": "wd:Q192669",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:MC_Solaar",
+      "uri_wikidata": "wd:Q520922",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Air",
+      "uri_wikidata": "wd:Q389488",
+      "confiance": 0.97,
+      "strategie": "context"
+    },
+    {
+      "entite_privee": "ex:Mylene_Farmer",
+      "uri_wikidata": "wd:Q235196",
+      "confiance": 0.97,
+      "strategie": "alias"
+    },
+    {
+      "entite_privee": "ex:The_Beatles",
+      "uri_wikidata": "wd:Q1299",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Pink_Floyd",
+      "uri_wikidata": "wd:Q2306",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Led_Zeppelin",
+      "uri_wikidata": "wd:Q2331",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Radiohead",
+      "uri_wikidata": "wd:Q128309",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:David_Bowie",
+      "uri_wikidata": "wd:Q5383",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Michael_Jackson",
+      "uri_wikidata": "wd:Q2831",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Bob_Dylan",
+      "uri_wikidata": "wd:Q392",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Rolling_Stones",
+      "uri_wikidata": "wd:Q11036",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Queen",
+      "uri_wikidata": "wd:Q15862",
+      "confiance": 0.97,
+      "strategie": "context"
+    },
+    {
+      "entite_privee": "ex:Nirvana",
+      "uri_wikidata": "wd:Q11649",
+      "confiance": 0.97,
+      "strategie": "context"
+    },
+    {
+      "entite_privee": "ex:Beyonce",
+      "uri_wikidata": "wd:Q83405",
+      "confiance": 0.97,
+      "strategie": "alias"
+    },
+    {
+      "entite_privee": "ex:Eminem",
+      "uri_wikidata": "wd:Q1199",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Jay-Z",
+      "uri_wikidata": "wd:Q170930",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Kanye_West",
+      "uri_wikidata": "wd:Q44088",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Adele",
+      "uri_wikidata": "wd:Q81771",
+      "confiance": 0.97,
+      "strategie": "context"
+    },
+    {
+      "entite_privee": "ex:Coldplay",
+      "uri_wikidata": "wd:Q45188",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Arctic_Monkeys",
+      "uri_wikidata": "wd:Q134541",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Tame_Impala",
+      "uri_wikidata": "wd:Q869612",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Amy_Winehouse",
+      "uri_wikidata": "wd:Q131272",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Miles_Davis",
+      "uri_wikidata": "wd:Q93341",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Nina_Simone",
+      "uri_wikidata": "wd:Q128439",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Elvis_Presley",
+      "uri_wikidata": "wd:Q303",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Bob_Marley",
+      "uri_wikidata": "wd:Q76",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Aretha_Franklin",
+      "uri_wikidata": "wd:Q5990",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Frank_Sinatra",
+      "uri_wikidata": "wd:Q40912",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Kendrick_Lamar",
+      "uri_wikidata": "wd:Q205303",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Drake",
+      "uri_wikidata": "wd:Q33777",
+      "confiance": 0.97,
+      "strategie": "context"
+    },
+    {
+      "entite_privee": "ex:Rihanna",
+      "uri_wikidata": "wd:Q36153",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Whitney_Houston",
+      "uri_wikidata": "wd:Q37079",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Massive_Attack",
+      "uri_wikidata": "wd:Q183504",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Portishead",
+      "uri_wikidata": "wd:Q217294",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Gorillaz",
+      "uri_wikidata": "wd:Q259732",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Joy_Division",
+      "uri_wikidata": "wd:Q183412",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Aphex_Twin",
+      "uri_wikidata": "wd:Q208638",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:The_Strokes",
+      "uri_wikidata": "wd:Q183048",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:LCD_Soundsystem",
+      "uri_wikidata": "wd:Q1352505",
+      "confiance": 0.99,
+      "strategie": "exact"
+    },
+    {
+      "entite_privee": "ex:Bjork",
+      "uri_wikidata": "wd:Q47159",
+      "confiance": 0.97,
+      "strategie": "alias"
+    },
+    {
+      "entite_privee": "ex:Tupac_Shakur",
+      "uri_wikidata": "wd:Q155818",
+      "confiance": 0.99,
+      "strategie": "exact"
+    }
+  ],
+  "alignement_predicats": [
+    {
+      "predicat_prive": "exo:hasGenre",
+      "prop_wikidata": "wdt:P136",
+      "label_wikidata": "genre",
+      "relation": "owl:equivalentProperty",
+      "confiance": 0.99,
+      "note": "match exact"
+    },
+    {
+      "predicat_prive": "exo:signedTo",
+      "prop_wikidata": "wdt:P264",
+      "label_wikidata": "record label",
+      "relation": "owl:equivalentProperty",
+      "confiance": 0.98,
+      "note": "match exact"
+    },
+    {
+      "predicat_prive": "exo:influencedBy",
+      "prop_wikidata": "wdt:P737",
+      "label_wikidata": "influenced by",
+      "relation": "owl:equivalentProperty",
+      "confiance": 0.99,
+      "note": "match exact"
+    },
+    {
+      "predicat_prive": "exo:memberOf",
+      "prop_wikidata": "wdt:P463",
+      "label_wikidata": "member of",
+      "relation": "owl:equivalentProperty",
+      "confiance": 0.97,
+      "note": "match exact"
+    },
+    {
+      "predicat_prive": "exo:releaseYear",
+      "prop_wikidata": "wdt:P577",
+      "label_wikidata": "publication date",
+      "relation": "owl:equivalentProperty",
+      "confiance": 0.96,
+      "note": "match exact"
+    },
+    {
+      "predicat_prive": "exo:releasedAlbum",
+      "prop_wikidata": "wdt:P358",
+      "label_wikidata": "discography",
+      "relation": "owl:equivalentProperty",
+      "confiance": 0.85,
+      "note": "P358 plus large mais le plus proche"
+    },
+    {
+      "predicat_prive": "exo:originCountry",
+      "prop_wikidata": "wdt:P495",
+      "label_wikidata": "country of origin",
+      "relation": "owl:equivalentProperty",
+      "confiance": 0.9,
+      "note": "P495 pour groupes, P27 pour individus"
+    },
+    {
+      "predicat_prive": "exo:activeFrom",
+      "prop_wikidata": "wdt:P571",
+      "label_wikidata": "inception",
+      "relation": "owl:equivalentProperty",
+      "confiance": 0.85,
+      "note": "P571 pour groupes, P569 pour individus"
+    },
+    {
+      "predicat_prive": "exo:activeTo",
+      "prop_wikidata": "wdt:P576",
+      "label_wikidata": "dissolved date",
+      "relation": "owl:equivalentProperty",
+      "confiance": 0.85,
+      "note": "P576 pour groupes, P570 pour individus"
+    },
+    {
+      "predicat_prive": "exo:hasMember",
+      "prop_wikidata": "wdt:P527",
+      "label_wikidata": "has part",
+      "relation": "rdfs:subPropertyOf",
+      "confiance": 0.88,
+      "note": "hasMember est plus specifique que hasPart"
+    },
+    {
+      "predicat_prive": "exo:collaboratedWith",
+      "prop_wikidata": "wdt:P1327",
+      "label_wikidata": "partner in business",
+      "relation": "rdfs:subPropertyOf",
+      "confiance": 0.7,
+      "note": "P1327 trop generique, le notre est musical"
+    }
+  ]
+}
